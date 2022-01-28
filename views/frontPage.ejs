@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Recorder</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>                       
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style1.css">
+</head>
+<body> 
+    <div class="item1">
+      <br>
+        <h5><i class='fa fa-user'></i>  Welcome!<%=nme%></i></h5>
+    </div>
+    <div class="split left">
+      
+        <h1>Library</h1>
+        <br />
+        <ul>
+            <% for(var i=0;i < file.length;i++){ %>
+               <li class="item2">
+                   <p><%=file[i]%></p>
+                   <form action="/delete" method="post">
+                   <button type="submit" name="filename" value="<%=file[i]%>" class="btn btn-dark item3 delete1"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </form>
+                    <form action="/play" method = "post">
+                    <button type="submit" name="filename" value="<%=file[i]%>" class="btn btn-danger item3 play"><i class="fa fa-youtube-play" aria-hidden="true"></i></button>
+                  </form>
+                    <button class="btn btn-info item3 share"><i class="fa fa-share-square-o" aria-hidden="true"></i></button>
+                   <button class="btn btn-warning item3 edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                </li> 
+            <% } %>
+        </ul>
+      </div>
+      
+      <div class="split right">
+        <button id="start" class="red item4 btn btn-primary">
+          <i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp; Start Recording
+          </button>
+          <br>
+          <button id="stop" class="item4 btn btn-primary" disabled>
+            <i class="fa fa-stop" aria-hidden="true"></i>&nbsp;&nbsp; Stop Recording
+          </button><br>
+          <a id="save" class="item4 btn btn-primary">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp; Save Recording
+          </a>
+            
+          
+      </div>
+      <video autoplay muted/>
+     
+
+    <script src = "app.js"></script>
+</body>
+</html> 

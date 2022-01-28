@@ -1,0 +1,13 @@
+html{
+    margin:40px;
+}
+video{
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+button{
+    margin-top: 20px;
+    float: right;
+    margin-right: 50px;
+}
